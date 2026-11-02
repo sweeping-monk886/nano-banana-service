@@ -1,0 +1,18 @@
+node_modules
+.env
+*.log
+backups/
+diagnostics-*.zip
+.last-update-backup
+__pycache__/
+*.pyc
+regression-results/**/*.png
+regression-results/**/*.jpg
+regression-results/**/*.jpeg
+
+# 个人/业务素材与临时文件（绝不入库）
+feihsu/
+prompt_contact_*.jpg
+generated-preview.jpg
+tmp_prompt_attachments
+tmp_snapshot.json

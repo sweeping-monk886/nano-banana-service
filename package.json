@@ -1,0 +1,28 @@
+{
+  "name": "nano-banana-service",
+  "version": "1.0.0",
+  "description": "Server-side replacement of n8n workflow 2fUBVc1ev4rsd9dG (Feishu bitable -> nano-banana -> caption -> writeback).",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "once": "node src/runOnce.js",
+    "preflight": "powershell -ExecutionPolicy Bypass -File ./verify-install.ps1 -CheckProviders",
+    "regression:round": "node scripts/runRegressionRound.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "p-limit": "^6.1.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "sharp": "^0.33.5"
+  }
+}

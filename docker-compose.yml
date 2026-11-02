@@ -1,0 +1,18 @@
+services:
+  nano-banana-service:
+    build: .
+    image: nano-banana-service:latest
+    container_name: nano-banana-service
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Keep the container port stable even when the Windows service uses a
+      # different PORT value in the shared .env file.
+      PORT: 3000
+    ports:
+      - "${HOST_PORT:-3001}:3000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
